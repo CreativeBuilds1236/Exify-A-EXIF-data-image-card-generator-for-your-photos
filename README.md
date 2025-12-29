@@ -1,4 +1,4 @@
-# Exify 📸 :Exify A EXIF data image card generator for your photos
+# Exify 📸- A EXIF data image card generator for your photos
 
 **Exify** is a professional-grade web utility designed to transform digital photographs into aesthetic EXIF data image cards. It provides a minimalist way to share technical photography details—like ISO, Aperture, and Shutter Speed—in a high-resolution, gallery-ready format.
 
