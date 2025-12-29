@@ -2,11 +2,11 @@
 
 **Exify** is a professional-grade web utility designed to transform digital photographs into aesthetic EXIF data image cards. It provides a minimalist way to share technical photography details—like ISO, Aperture, and Shutter Speed—in a high-resolution, gallery-ready format.
 
----
+<img width="1919" height="870" alt="Image" src="https://github.com/user-attachments/assets/e64b678e-a326-4304-a089-8798e85e296c" />
 
 ## ✨ Features
 
-* **Auto-EXIF Detection**: Uses the `exifr` library to instantly pull camera make, model, and exposure settings from your uploaded images.
+* **Auto-EXIF Detection**: Uses the `exifr` library to instantly pull camera make, model, and exposure settings from your uploaded images. 
 * **Triple-Panel Interface**:
     * **Input Data**: Manage technical specs and fine-tune image scaling.
     * **Text Styling**: Dedicated panel to control fonts, sizes, and X/Y positioning for every text element.
@@ -14,6 +14,8 @@
 * **Custom Typography**: Integrated dropdowns featuring professional fonts like *Inter*, *Space Mono*, and *Oswald*.
 * **Image Manipulation**: Advanced tools to **Scale** and **Offset (X/Y)** your photo within the card frame.
 * **Universal Export**: Download your final card in **PNG, JPEG, or WEBP** format, optimized for social media platforms.
+# Final output
+![Image](https://github.com/user-attachments/assets/2f99afe1-dba3-4381-bb00-f795b479d8c6)
 
 ---
 
@@ -34,7 +36,6 @@
 * **HTML5 Canvas**: Powers the high-resolution image compositing.
 * **CSS Grid (3-Column)**: Provides a uniform, professional workspace layout.
 * **Vanilla JavaScript**: Handles real-time data binding and canvas manipulation.
-* **[exifr](https://github.com/MikeKroz/exifr)**: High-performance metadata parsing.
 * **Google Fonts**: Integrated via API for diverse typography options.
 
 ---
