@@ -1,0 +1,76 @@
+:root {
+  --te-bg: #e6e6e6;
+  --te-white: #ffffff;
+  --te-orange: #ff5000;
+  --te-black: #111111;
+  --te-grey: #d1d1d1; /* Light grey for sliders */
+  --font-mono: 'Space Mono', monospace;
+  --font-sans: 'Inter', sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0; padding: 20px;
+  background-color: var(--te-bg);
+  font-family: var(--font-mono);
+}
+
+/* NAVIGATION FIX: Space between logo and Generator button */
+.te-nav {
+  display: flex; justify-content: space-between; align-items: center;
+  background: white; padding: 12px 24px;
+  border-radius: 50px; margin-bottom: 25px;
+}
+.nav-left { display: flex; align-items: center; gap: 20px; } /* Added gap here */
+
+.logo-circle {
+  background: var(--te-black); color: white;
+  width: 40px; height: 40px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 900; font-family: var(--font-sans); flex-shrink: 0;
+}
+.active-orange { background: var(--te-orange); color: white; padding: 8px 18px; border-radius: 20px; font-weight: bold; font-size: 0.75rem; }
+
+/* 3-COLUMN LAYOUT */
+.main-layout {
+  display: grid;
+  grid-template-columns: 340px 340px 1fr;
+  gap: 20px;
+  max-width: 1700px;
+  margin: 0 auto;
+}
+
+.panel {
+  background: white; padding: 20px;
+  border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  max-height: 85vh; overflow-y: auto;
+}
+
+/* SLIDER STYLING: Light Grey */
+input[type="range"] { -webkit-appearance: none; width: 100%; height: 5px; background: #eee; border-radius: 5px; margin: 12px 0; outline: none; }
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none; height: 16px; width: 16px; border-radius: 50%;
+  background: var(--te-grey); /* Light grey handle */
+  border: 1px solid #bbb; cursor: pointer;
+}
+
+/* UI ELEMENTS */
+h1 { font-family: var(--font-sans); font-size: 1.1rem; margin-top: 0; }
+label { font-size: 0.6rem; color: #999; font-weight: bold; text-transform: uppercase; }
+input[type="text"], .font-dropdown { width: 100%; padding: 8px; border: 1px solid #eee; border-radius: 5px; font-size: 0.8rem; margin-bottom: 10px; }
+.custom-file-upload { border: 1px dashed #ccc; padding: 10px; text-align: center; border-radius: 5px; cursor: pointer; position: relative; }
+.custom-file-upload input { position: absolute; opacity: 0; width: 100%; height: 100%; top: 0; left: 0; cursor: pointer; }
+.orange-button { background: var(--te-orange); color: white; border: none; width: 100%; padding: 12px; border-radius: 5px; font-weight: bold; cursor: pointer; margin-top: 5px; }
+.dotted-select { border: 1px dashed #999; border-radius: 20px; padding: 5px 15px; }
+.black-button { background: var(--te-black); color: white; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer; font-weight: bold; }
+
+/* PREVIEW */
+.preview-area { display: flex; flex-direction: column; align-items: center; }
+.canvas-box { width: 100%; max-width: 500px; background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border: 1px solid #ddd; }
+canvas { width: 100%; height: auto; display: block; }
+
+@media (max-width: 1200px) {
+  .main-layout { grid-template-columns: 1fr; }
+  .panel { max-height: none; }
+}

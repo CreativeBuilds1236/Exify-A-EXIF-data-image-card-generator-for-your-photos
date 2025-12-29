@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exifly V6 - Final Build</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Roboto+Condensed:wght@700&family=Oswald:wght@700&family=Courier+Prime&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/exifr/dist/full.umd.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav class="te-nav">
+    <div class="nav-left">
+        <div class="logo-circle">Ex</div>
+        <div class="nav-pills">
+            <span class="pill active-orange">GENERATOR</span>
+        </div>
+    </div>
+    <div class="nav-right">
+      <select id="exportFormat" class="dotted-select">
+          <option value="png">PNG</option>
+          <option value="jpeg">JPEG</option>
+          <option value="webp">WEBP</option>
+      </select>
+      <button id="downloadBtn" class="black-button">EXPORT IMG</button>
+    </div>
+  </nav>
+
+  <main class="main-layout">
+    <section class="panel panel-scroll">
+      <h1>INPUT DATA</h1>
+      <div class="input-group">
+        <label>SOURCE IMAGE</label>
+        <div class="custom-file-upload">
+          <input type="file" id="imageInput" accept="image/*">
+          <span class="upload-label">SELECT FILE +</span>
+        </div>
+      </div>
+      <div class="input-group">
+          <label>IMAGE OFFSET (X / Y)</label>
+          <div class="slider-pair">
+            <input type="range" id="offsetX" min="-1000" max="1000" value="0">
+            <input type="range" id="offsetY" min="-1000" max="1000" value="0">
+          </div>
+      </div>
+      <div class="divider"></div>
+      <div class="input-group">
+        <label>DEVICE BRAND</label>
+        <input type="text" id="brandInput" placeholder="SAMSUNG">
+      </div>
+      <div class="input-group">
+        <label>MODEL</label>
+        <input type="text" id="modelInput" placeholder="GALAXY A56 5G">
+      </div>
+      <div class="input-row">
+        <div class="input-group"><label>ISO</label><input type="text" id="isoInput" placeholder="320"></div>
+        <div class="input-group"><label>APERTURE</label><input type="text" id="apertureInput" placeholder="f/1.8"></div>
+      </div>
+      <div class="input-row">
+        <div class="input-group"><label>SHUTTER</label><input type="text" id="shutterInput" placeholder="1/50s"></div>
+        <div class="input-group"><label>FOCAL LEN</label><input type="text" id="focalInput" placeholder="5.54mm"></div>
+      </div>
+      <button id="resetExif" class="orange-button">AUTO-DETECT EXIF</button>
+    </section>
+
+    <section class="panel panel-scroll">
+      <h1>TEXT STYLING</h1>
+      <div class="control-block">
+        <label class="sub-label">DEVICE (FONT • SIZE • X • Y)</label>
+        <select id="brandFont" class="font-dropdown">
+            <option value="'Inter', sans-serif">Inter</option>
+            <option value="'Roboto Condensed', sans-serif">Roboto Condensed</option>
+            <option value="'Oswald', sans-serif">Oswald</option>
+        </select>
+        <input type="range" id="brandSize" min="50" max="400" value="200">
+        <div class="slider-pair">
+            <input type="range" id="brandX" min="0" max="1500" value="120">
+            <input type="range" id="brandY" min="2600" max="3200" value="2880">
+        </div>
+      </div>
+
+      <div class="control-block">
+        <label class="sub-label">MODEL (FONT • SIZE • X • Y)</label>
+        <select id="modelFont" class="font-dropdown">
+            <option value="'Inter', sans-serif">Inter</option>
+            <option value="'Space Mono', monospace">Space Mono</option>
+        </select>
+        <input type="range" id="modelSize" min="30" max="250" value="100">
+        <div class="slider-pair">
+            <input type="range" id="modelX" min="0" max="1500" value="120">
+            <input type="range" id="modelY" min="2600" max="3200" value="3020">
+        </div>
+      </div>
+
+      <div class="control-block">
+        <label class="sub-label">META (FONT • SIZE • X • Y)</label>
+        <select id="metaFont" class="font-dropdown">
+            <option value="'Space Mono', monospace">Space Mono</option>
+            <option value="'Inter', sans-serif">Inter</option>
+        </select>
+        <input type="range" id="metaSize" min="20" max="150" value="60">
+        <div class="slider-pair">
+            <input type="range" id="metaX" min="0" max="1500" value="120">
+            <input type="range" id="metaY" min="2600" max="3200" value="3150">
+        </div>
+      </div>
+    </section>
+
+    <section class="preview-area">
+      <div class="canvas-box">
+        <canvas id="previewCanvas" width="2598" height="3248"></canvas>
+      </div>
+      <p class="canvas-label">PREVIEW OUTPUT • 2598 x 3248 PX</p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
